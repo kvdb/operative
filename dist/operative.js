@@ -127,7 +127,11 @@
 	};
 
 	// Expose:
-	window.operative = operative;
+	if (typeof module !== 'undefined') {
+		module.exports = operative;
+	} else {
+		window.operative = operative;
+	}
 })();
 
 (function() {
